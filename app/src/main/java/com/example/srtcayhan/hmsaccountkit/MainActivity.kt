@@ -1,17 +1,23 @@
 package com.example.srtcayhan.hmsaccountkit
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.TextView
 import com.example.srtcayhan.hmsaccountkit.databinding.ActivityMainBinding
 import com.huawei.hmf.tasks.Task
+import com.huawei.hms.aaid.HmsInstanceId
 import com.huawei.hms.common.ApiException
+import com.huawei.hms.push.utils.PluginUtil.onNewToken
 import com.huawei.hms.support.account.AccountAuthManager
 import com.huawei.hms.support.account.request.AccountAuthParams
 import com.huawei.hms.support.account.request.AccountAuthParamsHelper
+import com.huawei.hms.support.account.result.AuthAccount
 import com.huawei.hms.support.account.service.AccountAuthService
 
 
@@ -28,6 +34,7 @@ class MainActivity : AppCompatActivity() {
     var mAuthManager: AccountAuthService? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -37,13 +44,18 @@ class MainActivity : AppCompatActivity() {
 
         binding.signInHwaButton.setOnClickListener { signInByHwId() }
 
-        binding.silentSignInButton.setOnClickListener { silentSignIn() }
+        binding.silentSignInButton.setOnClickListener { silentSignInByHwId() }
+
+        binding.authSignInButton.setOnClickListener { authModeSignIn() }
 
         binding.signOutButton.setOnClickListener { signOut() }
 
         binding.cancelAuthButton.setOnClickListener { cancelAuth() }
 
         logTextView = findViewById<View>(R.id.LogText) as TextView
+
+        getToken()
+
     }
 
 
@@ -55,14 +67,13 @@ class MainActivity : AppCompatActivity() {
                 .setAccessToken()
                 .createParams()
 
-        mAuthManager =
-            AccountAuthManager.getService(this@MainActivity, authParams)
+        mAuthManager = AccountAuthManager.getService(this@MainActivity, authParams)
 
         startActivityForResult(mAuthManager?.signInIntent, 8888)
 
     }
 
-    private fun silentSignIn() {
+    private fun silentSignInByHwId() {
         val authParams: AccountAuthParams =
             AccountAuthParamsHelper(AccountAuthParams.DEFAULT_AUTH_REQUEST_PARAM)
                 .setIdToken()
@@ -71,8 +82,31 @@ class MainActivity : AppCompatActivity() {
         val service: AccountAuthService =
             AccountAuthManager.getService(this@MainActivity, authParams)
 
-        startActivityForResult(service.signInIntent, 8888)
+        val task : Task<AuthAccount> = service.silentSignIn()
 
+        task.addOnSuccessListener { authAccount ->
+            // Obtain the user's ID information.
+            showLog("Silent sign in success")
+        }
+
+        task.addOnFailureListener { e ->
+            // The sign-in failed. Your app can **getSignInIntent()**nIntent() method to explicitly display the authorization screen.
+            if (e is ApiException) {
+                showLog("sign failed status:" + e.statusCode)
+            }
+        }
+
+
+    }
+
+    private fun authModeSignIn(){
+        val authParams : AccountAuthParams =  AccountAuthParamsHelper(AccountAuthParams.DEFAULT_AUTH_REQUEST_PARAM)
+            .setAuthorizationCode()
+            .createParams()
+
+        val service : AccountAuthService = AccountAuthManager.getService(this@MainActivity, authParams)
+
+        startActivityForResult(service.signInIntent, 8888)
 
     }
 
@@ -86,8 +120,9 @@ class MainActivity : AppCompatActivity() {
                 // The sign-in is successful, and the user's ID information and ID token are obtained.
                 val authAccount = authAccountTask.result
                 Log.i(TAG, "idToken:" + authAccount.idToken)
-                showLog(" signIn success ")
-                showLog("AccessToken: " + authAccount.getAccessToken())
+                showLog("SignIn with Huawei Id Success \nName: ${authAccount.displayName} \nAccessToken:${authAccount.accessToken}  \n" +
+                        "AuthorizationCode:${authAccount.authorizationCode}")
+
 
             } else {
                 // The sign-in failed. No processing is required. Logs are recorded for fault locating.
@@ -98,20 +133,20 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
     private fun signOut() {
 
 
         val signOutTask: Task<Void> = mAuthManager!!.signOut()
-        signOutTask.addOnSuccessListener({
+        signOutTask.addOnSuccessListener {
             Log.i(TAG, "signOut Success")
             showLog("signOut Success")
-        }).addOnFailureListener {
+        }.addOnFailureListener {
             Log.e(TAG, "signOut fail")
             showLog("signOut fail")
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun showLog(log: String) {
         logTextView!!.text = "log:\n$log"
     }
@@ -120,16 +155,47 @@ class MainActivity : AppCompatActivity() {
         mAuthManager?.cancelAuthorization()?.addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 // Processing after a successful authorization revoking.
-                Log.i(TAG, "onSuccess: ")
+                showLog("Authorization Revoked")
             } else {
                 // Handle the exception.
                 val exception = task.exception
                 if (exception is ApiException) {
                     val statusCode = exception.statusCode
-                    Log.i(TAG, "onFailure: $statusCode")
+                    showLog("Revoking Authorization Canceled")
                 }
             }
         }
+    }
+
+    private fun getToken() {
+        showLog("getToken:begin")
+        object : Thread() {
+            override fun run() {
+                try {
+                    // read from agconnect-services.json
+                    val appId = "104854133"
+                    val token = HmsInstanceId.getInstance(this@MainActivity).getToken(appId, "HCM")
+                    Log.i(TAG, "get token:$token")
+                    if (!TextUtils.isEmpty(token)) {
+                        sendRegTokenToServer(token)
+                    }
+                    runOnUiThread {
+                        showLog("get token:$token")
+                    }
+
+                } catch (e: ApiException) {
+                    Log.e(TAG, "get token failed, $e")
+                    runOnUiThread {
+                        showLog("get token failed, $e")
+                    }
+
+                }
+            }
+        }.start()
+    }
+
+    private fun sendRegTokenToServer(token: String?) {
+        Log.i(TAG, "sending token to server. token:$token")
     }
 
 }

@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">HmsAccountKit</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="account_usage_process">Account Usage Process</string>
+    <string name="authorizationcode_mode_signin">AuthorizationCode Mode SignIn</string>
+    <string name="silent_signin">Silent SignIn</string>
+    <string name="signout">SignOut</string>
+    <string name="cancel_authorization">Cancel Authorization</string>
 </resources>
