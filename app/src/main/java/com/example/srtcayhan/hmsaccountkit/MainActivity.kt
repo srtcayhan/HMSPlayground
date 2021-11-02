@@ -1,7 +1,6 @@
 package com.example.srtcayhan.hmsaccountkit
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,7 +12,6 @@ import com.example.srtcayhan.hmsaccountkit.databinding.ActivityMainBinding
 import com.huawei.hmf.tasks.Task
 import com.huawei.hms.aaid.HmsInstanceId
 import com.huawei.hms.common.ApiException
-import com.huawei.hms.push.utils.PluginUtil.onNewToken
 import com.huawei.hms.support.account.AccountAuthManager
 import com.huawei.hms.support.account.request.AccountAuthParams
 import com.huawei.hms.support.account.request.AccountAuthParamsHelper
@@ -51,6 +49,11 @@ class MainActivity : AppCompatActivity() {
         binding.signOutButton.setOnClickListener { signOut() }
 
         binding.cancelAuthButton.setOnClickListener { cancelAuth() }
+
+        binding.btnAnalytics.setOnClickListener {
+            val intent = Intent(this, AnalyticsActivity::class.java)
+            startActivity(intent)
+        }
 
         logTextView = findViewById<View>(R.id.LogText) as TextView
 
