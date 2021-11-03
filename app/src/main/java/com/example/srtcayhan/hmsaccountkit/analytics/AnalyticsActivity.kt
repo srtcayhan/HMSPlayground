@@ -1,4 +1,4 @@
-package com.example.srtcayhan.hmsaccountkit
+package com.example.srtcayhan.hmsaccountkit.analytics
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import com.example.srtcayhan.hmsaccountkit.R
 import com.huawei.hms.analytics.HiAnalytics
 import com.huawei.hms.analytics.HiAnalyticsInstance
 import com.huawei.hms.analytics.HiAnalyticsTools

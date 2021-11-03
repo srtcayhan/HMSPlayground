@@ -20,4 +20,35 @@
     <string name="correct_answer">The answer is correct.</string>
     <string name="favoriate_sport">Favoriate Sport:</string>
     <string name="start_analytics_activity">Start Analytics Activity</string>
+    <string name="ad_id_native">testu7m3hc4gvm</string>
+    <string name="ad_id_native_small">testb65czjivt9</string>
+    <string name="ad_id_native_video">testy63txaom86</string>
+    <string name="ad_flag">Ad</string>
+    <string name="display_form">Display form:</string>
+    <string name="large">Large image with text.</string>
+    <string name="small">Small image with text.</string>
+    <string name="video">Video with text.</string>
+    <string name="load_button_text">LOAD AD</string>
+    <string name="status_ad_loading">Ad loading state: being loaded.</string>
+    <string name="status_load_ad_success">Ad loading state: loaded successfully.</string>
+    <string name="status_load_ad_fail">Ad loading state: failed to be loaded. Error code: </string>
+    <string name="status_play_start">Video playback state: starting to be played.</string>
+    <string name="status_playing">Video playback state: being played.</string>
+    <string name="status_play_end">Video playback state: playback completed.</string>
+    <string name="ad_is_closed">Ad is closed.</string>
+    <string name="watch_video_button_text">Watch Video</string>
+    <string name="reward_ad_title">This is reward ad sample.</string>
+    <string name="reward_ad_id">testx9dtjwj8hp</string>
+    <string name="interstitial_title_text">This is interstitial ad sample.</string>
+    <string name="image_ad_id">teste9ih9j0rc3</string>
+    <string name="video_ad_id">testb4znbuh3n2</string>
+    <string name="load_button">Load Interstitial Ad</string>
+    <string name="interstitial_display_picture">Image</string>
+    <string name="interstitial_display_video">Video</string>
+    <string name="ad_id_splash">testd7c5cewoj6</string>
+    <string name="ad_id_splash_landscape">testq6zq98hecj</string>
+    <string name="copyright_info">Copyright 2020. X Technologies Co., Ltd</string>
+    <string name="status_ad_dismissed">Ad is dismissed.</string>
+
+
 </resources>
