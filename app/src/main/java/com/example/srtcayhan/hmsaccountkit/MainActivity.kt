@@ -8,6 +8,8 @@ import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.TextView
+import com.example.srtcayhan.hmsaccountkit.ads.AdActivity
+import com.example.srtcayhan.hmsaccountkit.analytics.AnalyticsActivity
 import com.example.srtcayhan.hmsaccountkit.databinding.ActivityMainBinding
 import com.huawei.hmf.tasks.Task
 import com.huawei.hms.aaid.HmsInstanceId
@@ -52,6 +54,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnAnalytics.setOnClickListener {
             val intent = Intent(this, AnalyticsActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnAd.setOnClickListener {
+            val intent = Intent(this, AdActivity::class.java)
             startActivity(intent)
         }
 
