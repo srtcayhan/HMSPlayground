@@ -91,6 +91,15 @@
                 android:text="Start Ad Activity"
                 android:textAllCaps="false" />
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:text="Start Location Activity"
+                android:textAllCaps="false" />
+
             <EditText
                 android:id="@+id/LogText"
                 android:layout_width="match_parent"

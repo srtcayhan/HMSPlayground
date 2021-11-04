@@ -3,6 +3,9 @@
     package="com.example.srtcayhan.hmsaccountkit">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
     <queries>
         <intent>
@@ -17,6 +20,9 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.HmsAccountKit"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".location.LocationActivity"
+            android:exported="false" />
         <activity
             android:name=".ads.SplashActivity"
             android:exported="false" />
