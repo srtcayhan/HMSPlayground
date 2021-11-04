@@ -11,6 +11,7 @@ import android.widget.TextView
 import com.example.srtcayhan.hmsaccountkit.ads.AdActivity
 import com.example.srtcayhan.hmsaccountkit.analytics.AnalyticsActivity
 import com.example.srtcayhan.hmsaccountkit.databinding.ActivityMainBinding
+import com.example.srtcayhan.hmsaccountkit.location.LocationActivity
 import com.huawei.hmf.tasks.Task
 import com.huawei.hms.aaid.HmsInstanceId
 import com.huawei.hms.common.ApiException
@@ -59,6 +60,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnAd.setOnClickListener {
             val intent = Intent(this, AdActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnLocation.setOnClickListener {
+            val intent = Intent(this, LocationActivity::class.java)
             startActivity(intent)
         }
 
