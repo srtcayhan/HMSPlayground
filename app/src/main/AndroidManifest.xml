@@ -5,7 +5,11 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" /> <!-- Camera permission -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- File read permission -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <queries>
         <intent>
@@ -19,7 +23,20 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/Theme.HmsAccountKit"
+        android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".scan.bitmap.BitmapViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".scan.defaultview.DefaultViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".scan.customizedview.DefinedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".scan.customizedview.CustomizedViewActivity"
+            android:exported="false" />
         <activity
             android:name=".location.LocationActivity"
             android:exported="false" />
