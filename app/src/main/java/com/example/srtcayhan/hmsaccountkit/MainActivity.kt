@@ -12,6 +12,7 @@ import com.example.srtcayhan.hmsaccountkit.ads.AdActivity
 import com.example.srtcayhan.hmsaccountkit.analytics.AnalyticsActivity
 import com.example.srtcayhan.hmsaccountkit.databinding.ActivityMainBinding
 import com.example.srtcayhan.hmsaccountkit.location.LocationActivity
+import com.example.srtcayhan.hmsaccountkit.scan.customizedview.CustomizedViewActivity
 import com.huawei.hmf.tasks.Task
 import com.huawei.hms.aaid.HmsInstanceId
 import com.huawei.hms.common.ApiException
@@ -64,6 +65,11 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btnLocation.setOnClickListener {
             val intent = Intent(this, LocationActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnScan.setOnClickListener {
+            val intent = Intent(this, CustomizedViewActivity::class.java)
             startActivity(intent)
         }
 

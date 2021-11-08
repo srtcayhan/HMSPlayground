@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".scan.bitmap.BitmapViewActivity">
+
+    <Button
+        android:id="@+id/btn_bitmap"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:textAllCaps="false"
+        android:text="Bitmap Mode" />
+
+</LinearLayout>
