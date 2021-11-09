@@ -109,6 +109,15 @@
                 android:text="Start Scan Activity"
                 android:textAllCaps="false" />
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_map"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:text="Start Map Activity"
+                android:textAllCaps="false" />
+
             <EditText
                 android:id="@+id/LogText"
                 android:layout_width="match_parent"
