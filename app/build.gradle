@@ -74,5 +74,7 @@ dependencies {
     implementation 'com.huawei.hms:ads-lite:13.4.48.301'
     implementation 'com.huawei.hms:location:6.2.0.300'
     implementation 'com.huawei.hms:scan:2.2.0.300'
+    implementation 'com.huawei.hms:maps:6.0.1.304'
+
 }
 
