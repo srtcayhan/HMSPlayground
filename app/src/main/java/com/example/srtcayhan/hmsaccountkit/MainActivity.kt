@@ -13,6 +13,7 @@ import com.example.srtcayhan.hmsaccountkit.analytics.AnalyticsActivity
 import com.example.srtcayhan.hmsaccountkit.databinding.ActivityMainBinding
 import com.example.srtcayhan.hmsaccountkit.location.LocationActivity
 import com.example.srtcayhan.hmsaccountkit.map.MapActivity
+import com.example.srtcayhan.hmsaccountkit.safetydetect.SafetyDetectActivity
 import com.example.srtcayhan.hmsaccountkit.scan.customizedview.CustomizedViewActivity
 import com.huawei.hmf.tasks.Task
 import com.huawei.hms.aaid.HmsInstanceId
@@ -76,6 +77,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnMap.setOnClickListener {
             val intent = Intent(this, MapActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnSafety.setOnClickListener {
+            val intent = Intent(this, SafetyDetectActivity::class.java)
             startActivity(intent)
         }
 
