@@ -3,8 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/s84202806/AndroidStudioProjects/HmsAccountKit/app/src/main/res/drawable/btn_bg_round.xml" value="0.22239583333333332" />
+        <entry key="..\:/Users/s84202806/AndroidStudioProjects/HmsAccountKit/app/src/main/res/drawable/btn_round_corner_normal.xml" value="0.22239583333333332" />
+        <entry key="..\:/Users/s84202806/AndroidStudioProjects/HmsAccountKit/app/src/main/res/drawable/btn_round_corner_small.xml" value="0.22239583333333332" />
+        <entry key="..\:/Users/s84202806/AndroidStudioProjects/HmsAccountKit/app/src/main/res/drawable/btn_round_green.xml" value="0.22239583333333332" />
+        <entry key="..\:/Users/s84202806/AndroidStudioProjects/HmsAccountKit/app/src/main/res/drawable/btn_round_processing.xml" value="0.22239583333333332" />
+        <entry key="..\:/Users/s84202806/AndroidStudioProjects/HmsAccountKit/app/src/main/res/drawable/tab_menu_bg.xml" value="0.2671875" />
+        <entry key="..\:/Users/s84202806/AndroidStudioProjects/HmsAccountKit/app/src/main/res/drawable/tab_menu_userdetect.xml" value="0.2671875" />
         <entry key="..\:/Users/s84202806/AndroidStudioProjects/HmsAccountKit/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/Users/s84202806/AndroidStudioProjects/HmsAccountKit/app/src/main/res/layout/activity_safety_detect.xml" value="0.3375" />
+        <entry key="..\:/Users/s84202806/AndroidStudioProjects/HmsAccountKit/app/src/main/res/layout/fg_appscheck.xml" value="0.3375" />
+        <entry key="..\:/Users/s84202806/AndroidStudioProjects/HmsAccountKit/app/src/main/res/layout/fg_content.xml" value="0.25104166666666666" />
+        <entry key="..\:/Users/s84202806/AndroidStudioProjects/HmsAccountKit/app/src/main/res/layout/fg_sysintegrity.xml" value="0.25104166666666666" />
+        <entry key="..\:/Users/s84202806/AndroidStudioProjects/HmsAccountKit/app/src/main/res/layout/fg_urlcheck.xml" value="0.3375" />
+        <entry key="..\:/Users/s84202806/AndroidStudioProjects/HmsAccountKit/app/src/main/res/layout/fg_userdetect.xml" value="0.25104166666666666" />
+        <entry key="..\:/Users/s84202806/AndroidStudioProjects/HmsAccountKit/app/src/main/res/layout/fragment_safety_detect_apps_check_a_p_i.xml" value="0.20625" />
         <entry key="..\:/Users/s84202806/AndroidStudioProjects/HmsAccountKit/app/src/main/res/layout/fragment_sign_in_confirm.xml" value="0.2171875" />
+        <entry key="..\:/Users/s84202806/AndroidStudioProjects/HmsAccountKit/app/src/main/res/layout/item_list_app.xml" value="0.3375" />
+        <entry key="..\:/Users/s84202806/AndroidStudioProjects/HmsAccountKit/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1890625" />
       </map>
     </option>
   </component>
