@@ -99,4 +99,6 @@
     <string name="tab_menu_user">UserDetect</string>
     <string name="tab_menu_wifidetect">WifiDetect</string>
 
+    <string name="action_settings">Settings</string>
+
 </resources>

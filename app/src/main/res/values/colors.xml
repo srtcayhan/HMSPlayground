@@ -31,4 +31,7 @@
     <color name="background_processing">#8BC34A</color>
 
     <color name="text_view_background">#1743A000</color>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
 </resources>
