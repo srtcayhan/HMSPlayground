@@ -11,6 +11,7 @@ import android.widget.TextView
 import com.example.srtcayhan.hmsaccountkit.ads.AdActivity
 import com.example.srtcayhan.hmsaccountkit.analytics.AnalyticsActivity
 import com.example.srtcayhan.hmsaccountkit.databinding.ActivityMainBinding
+import com.example.srtcayhan.hmsaccountkit.drive.DriveActivity
 import com.example.srtcayhan.hmsaccountkit.location.LocationActivity
 import com.example.srtcayhan.hmsaccountkit.map.MapActivity
 import com.example.srtcayhan.hmsaccountkit.safetydetect.SafetyDetectActivity
@@ -82,6 +83,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnSafety.setOnClickListener {
             val intent = Intent(this, SafetyDetectActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnDrive.setOnClickListener {
+            val intent = Intent(this, DriveActivity::class.java)
             startActivity(intent)
         }
 

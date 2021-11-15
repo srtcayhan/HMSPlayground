@@ -29,6 +29,9 @@
         android:theme="@style/Theme.HmsAccountKit"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".drive.DriveActivity"
+            android:exported="false" />
+        <activity
             android:name=".safetydetect.SafetyDetectActivity"
             android:exported="false" />
         <activity
