@@ -77,6 +77,6 @@ dependencies {
     implementation 'com.huawei.hms:maps:6.0.1.304'
     implementation 'com.huawei.hms:safetydetect:5.0.5.302'
     implementation 'com.huawei.hms:drive:5.0.0.301'
-
+    implementation 'com.huawei.hms:site:6.0.0.300'
 }
 
