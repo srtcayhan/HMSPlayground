@@ -16,6 +16,7 @@ import com.example.srtcayhan.hmsaccountkit.location.LocationActivity
 import com.example.srtcayhan.hmsaccountkit.map.MapActivity
 import com.example.srtcayhan.hmsaccountkit.safetydetect.SafetyDetectActivity
 import com.example.srtcayhan.hmsaccountkit.scan.customizedview.CustomizedViewActivity
+import com.example.srtcayhan.hmsaccountkit.site.SiteActivity
 import com.huawei.hmf.tasks.Task
 import com.huawei.hms.aaid.HmsInstanceId
 import com.huawei.hms.common.ApiException
@@ -87,6 +88,11 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btnDrive.setOnClickListener {
             val intent = Intent(this, DriveActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnSite.setOnClickListener {
+            val intent = Intent(this, SiteActivity::class.java)
             startActivity(intent)
         }
 

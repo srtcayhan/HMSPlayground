@@ -142,6 +142,15 @@
                 android:text="Start Drive Activity"
                 android:textAllCaps="false" />
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_site"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:text="Start Site Activity"
+                android:textAllCaps="false" />
+
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
