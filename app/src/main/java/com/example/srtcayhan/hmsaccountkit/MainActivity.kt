@@ -12,6 +12,7 @@ import com.example.srtcayhan.hmsaccountkit.ads.AdActivity
 import com.example.srtcayhan.hmsaccountkit.analytics.AnalyticsActivity
 import com.example.srtcayhan.hmsaccountkit.databinding.ActivityMainBinding
 import com.example.srtcayhan.hmsaccountkit.drive.DriveActivity
+import com.example.srtcayhan.hmsaccountkit.identity.IdentityActivity
 import com.example.srtcayhan.hmsaccountkit.location.LocationActivity
 import com.example.srtcayhan.hmsaccountkit.map.MapActivity
 import com.example.srtcayhan.hmsaccountkit.safetydetect.SafetyDetectActivity
@@ -93,6 +94,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnSite.setOnClickListener {
             val intent = Intent(this, SiteActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnIdentity.setOnClickListener {
+            val intent = Intent(this, IdentityActivity::class.java)
             startActivity(intent)
         }
 
