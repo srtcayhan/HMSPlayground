@@ -29,6 +29,9 @@
         android:theme="@style/Theme.HmsAccountKit"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".identity.IdentityActivity"
+            android:exported="false" />
+        <activity
             android:name=".site.SiteActivity"
             android:exported="false" />
         <activity
