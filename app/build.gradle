@@ -79,5 +79,8 @@ dependencies {
     implementation 'com.huawei.hms:drive:5.0.0.301'
     implementation 'com.huawei.hms:site:6.0.0.300'
     implementation 'com.huawei.hms:identity:6.2.0.300'
+    implementation 'com.huawei.hms:panorama:5.0.2.305'
+    implementation 'com.huawei.hms:panorama-local:5.0.2.305'
+
 }
 
