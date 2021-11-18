@@ -15,6 +15,7 @@ import com.example.srtcayhan.hmsaccountkit.drive.DriveActivity
 import com.example.srtcayhan.hmsaccountkit.identity.IdentityActivity
 import com.example.srtcayhan.hmsaccountkit.location.LocationActivity
 import com.example.srtcayhan.hmsaccountkit.map.MapActivity
+import com.example.srtcayhan.hmsaccountkit.panorama.PanoramaActivity
 import com.example.srtcayhan.hmsaccountkit.safetydetect.SafetyDetectActivity
 import com.example.srtcayhan.hmsaccountkit.scan.customizedview.CustomizedViewActivity
 import com.example.srtcayhan.hmsaccountkit.site.SiteActivity
@@ -99,6 +100,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnIdentity.setOnClickListener {
             val intent = Intent(this, IdentityActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnPanorama.setOnClickListener {
+            val intent = Intent(this, PanoramaActivity::class.java)
             startActivity(intent)
         }
 

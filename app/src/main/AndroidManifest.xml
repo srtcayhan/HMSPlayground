@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.srtcayhan.hmsaccountkit">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -8,6 +9,9 @@
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" /> <!-- Camera permission -->
     <uses-permission android:name="android.permission.CAMERA" /> <!-- File read permission -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
@@ -28,6 +32,12 @@
         android:requestLegacyExternalStorage="true"
         android:theme="@style/Theme.HmsAccountKit"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".panorama.LocalInterfaceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".panorama.PanoramaActivity"
+            android:exported="false" />
         <activity
             android:name=".identity.IdentityActivity"
             android:exported="false" />
