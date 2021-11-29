@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" /> <!-- Camera permission -->
-    <uses-permission android:name="android.permission.CAMERA" /> <!-- File read permission -->
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
@@ -32,6 +32,9 @@
         android:requestLegacyExternalStorage="true"
         android:theme="@style/Theme.HmsAccountKit"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".fido.FidoActivity"
+            android:exported="false" />
         <activity
             android:name=".panorama.LocalInterfaceActivity"
             android:exported="false" />

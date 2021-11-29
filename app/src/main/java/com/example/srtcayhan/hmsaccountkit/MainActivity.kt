@@ -12,6 +12,7 @@ import com.example.srtcayhan.hmsaccountkit.ads.AdActivity
 import com.example.srtcayhan.hmsaccountkit.analytics.AnalyticsActivity
 import com.example.srtcayhan.hmsaccountkit.databinding.ActivityMainBinding
 import com.example.srtcayhan.hmsaccountkit.drive.DriveActivity
+import com.example.srtcayhan.hmsaccountkit.fido.FidoActivity
 import com.example.srtcayhan.hmsaccountkit.identity.IdentityActivity
 import com.example.srtcayhan.hmsaccountkit.location.LocationActivity
 import com.example.srtcayhan.hmsaccountkit.map.MapActivity
@@ -105,6 +106,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnPanorama.setOnClickListener {
             val intent = Intent(this, PanoramaActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnFido.setOnClickListener {
+            val intent = Intent(this, FidoActivity::class.java)
             startActivity(intent)
         }
 
